@@ -1,0 +1,43 @@
+{
+  "name": "oneTab",
+  "appId": "com.oneTab.app",
+  "productName": "oneTab",
+  "version": "1.0.0",
+  "description": "oneTab",
+  "main": "index.js",
+  "keywords": [
+    "chatgpt",
+    "openai"
+  ],
+  "mac": {  
+    "icon": "build/icon.icns"
+  },
+  "build": {
+    "appId": "com.oneTab.app",
+    "mac": {
+      "appId": "com.oneTab.app",
+      "target" : { "target": "dir", "arch": "arm64" }
+    },
+    "win": {
+      "appId": "com.oneTab.app",
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ],
+      "icon": "build/icon.ico"
+    }
+  },
+  "scripts": {
+    "serve": "electron .",
+    "build-64": "electron-builder --win --x64",
+		"build-linux": "electron-builder --linux",
+		"build-mac": "electron-builder build --x64"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^27.0.1",
+    "electron-builder": "^24.6.4"
+  }
+}
